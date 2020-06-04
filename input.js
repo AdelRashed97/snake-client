@@ -1,25 +1,31 @@
+let connection;
+
 const handleUserInput = (key) =>{
   if (key === '\u0003') {
-    console.log("Left Game")
+    console.log("Left Game");
     process.exit();
-  } else if ( key ==='\x77') {
+  } else if (key === '\x77') {
     // key = w
-    console.log("up");
+    connection.write("Move: up");
 
   } else if (key === '\x61') {
     // key = a
-    console.log('left');
+  
+     connection.write("Move: left");
 
   } else if (key === '\x73') {
     // key =s
-    console.log('down');
+    
+   connection.write("Move: down");
 
   } else if (key === '\x64') {
     // key = d
-    console.log('right');
+   
+    connection.write("Move: right");
   }
 };
-const setupInput = function() {
+const setupInput = function(conn) {
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');

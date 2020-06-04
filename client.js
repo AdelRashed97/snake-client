@@ -14,7 +14,13 @@ const connect = function() {
     console.log("Successfuly connected to the game server");
     conn.write("Name: AHR");
   });
-  //conn.on('connect')
+  // hard coding the snake to move
+  // conn.on('connect',() => {
+  //   setInterval(() => {conn.write("Move: left");
+
+  //   },50);
+    
+  // });
   
   conn.on('data',(data) => console.log(data));
 
