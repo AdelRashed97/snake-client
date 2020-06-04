@@ -11,17 +11,21 @@ const handleUserInput = (key) =>{
   } else if (key === '\x61') {
     // key = a
   
-     connection.write("Move: left");
+    connection.write("Move: left");
 
   } else if (key === '\x73') {
     // key =s
     
-   connection.write("Move: down");
+    connection.write("Move: down");
 
   } else if (key === '\x64') {
     // key = d
    
     connection.write("Move: right");
+  } else if (key === '\x66') {
+    // key =f
+    // send message
+    connection.write("Say: hi");
   }
 };
 const setupInput = function(conn) {
